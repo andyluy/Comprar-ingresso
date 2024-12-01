@@ -3,6 +3,12 @@ function comprar() {
     let tipo = document.getElementById("tipo-ingresso");
     // Obtém a quantidade de ingressos desejada e converte para número inteiro
     let qtd = parseInt(document.getElementById("qtd").value);
+
+    // impede o usuario de enviar valores negativos ou 0
+    if (qtd <=0){
+        alert("Insira um valor válido para a compra");
+        return;
+    }
   
     // Verifica o tipo de ingresso selecionado e chama a função correspondente
     if (tipo.value == "pista") {
